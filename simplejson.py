@@ -10,4 +10,3 @@ class SimpleJson:
     def load(text):
         parser = Parser(text)
         return parser.object()
-

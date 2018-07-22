@@ -1,7 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-from pprint import pprint
 
 from lexer import Lexer
 
@@ -47,7 +46,6 @@ class Parser:
 
     def object(self):
         if self.match(Lexer.L_PARENTHESES):
-            token = self.consume()
             if self.match(Lexer.R_PARENTHESES):
                 self.consume()
                 return {}
@@ -112,4 +110,3 @@ class Parser:
             self.consume()
             elem.extend(self.elements())
         return elem
-

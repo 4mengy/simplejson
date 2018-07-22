@@ -40,9 +40,9 @@ class Lexer:
     COLON = 10
     COMMA = 11
 
-    TOKEN_NAME = ['EOF', 'Left Parentheses', 'Right Parentheses', 'String', 'Number',
-                  'True', 'False', 'Null', 'Left Brackets', 'Right Brackets', 'Colon',
-                  'Comma']
+    TOKEN_NAME = ['EOF', 'Left Parentheses', 'Right Parentheses',
+                  'String', 'Number', 'True', 'False', 'Null',
+                  'Left Brackets', 'Right Brackets', 'Colon', 'Comma']
 
     @staticmethod
     def get_token_name(token_type):
@@ -158,4 +158,5 @@ class Lexer:
                 self._consume()
             return Token(self.NUMBER, int(number))
 
-        raise ValueError('Invalid character "{}" in pos {}.'.format(self._current_char, self._pos))
+        raise ValueError('Invalid character "{}" in pos {}.'
+                         .format(self._current_char, self._pos))
