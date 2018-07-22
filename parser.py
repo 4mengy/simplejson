@@ -73,6 +73,8 @@ class Parser:
                 self.consume()
                 val = self.value()
                 return {key: val}
+        else:
+            raise SyntaxError('Key must be string.')
 
     def value(self):
         if self.match(Lexer.STRING):
